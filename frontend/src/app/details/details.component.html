@@ -1,0 +1,61 @@
+<h1 style="margin-top: 110px; margin-left: 500px;">Dealers Details</h1>
+<div class="card">
+    <div class="register-container">
+      <!-- Display message -->
+      <div *ngIf="message" [ngClass]="messageClass" class="message">{{ message }}</div>
+  
+      <!-- Registration Form -->
+      <form (ngSubmit)="register()" #registerForm="ngForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" [(ngModel)]="username" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phoneno">Phone Number</label>
+          <input type="text" id="phoneno" name="phoneno" [(ngModel)]="phoneno" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="quantity">Type</label>
+          <input type="text" id="quantity" name="quantity" [(ngModel)]="quantity" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="text" id="price" name="price" [(ngModel)]="price" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" [(ngModel)]="location" required>
+        </div>
+        
+        <button type="submit" [disabled]="registerForm.invalid">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  <table *ngIf="users.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Phone Number</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.phoneno }}</td>
+        <td>{{ user.quantity }}</td>
+        <td>{{ user.price }}</td>
+        <td>{{ user.location }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <app-navbar></app-navbar>

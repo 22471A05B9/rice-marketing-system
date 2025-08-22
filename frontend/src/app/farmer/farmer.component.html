@@ -1,0 +1,60 @@
+<h1 style="margin-top: 110px; margin-left: 500px;">Farmer's Details</h1>
+<div class="card">
+    <div class="register-container">
+      <!-- Display message -->
+      <div *ngIf="message" [ngClass]="messageClass" class="message">{{ message }}</div>
+  
+      <!-- Registration Form -->
+      <form (ngSubmit)="register()" #registerForm="ngForm">
+        <div class="form-group">
+          <label for="farmer">Farmer</label>
+          <input type="text" id="farmer" name="farmer" [(ngModel)]="farmer" required>
+        </div> 
+        <div class="form-group">
+          <label for="phoneno">Phone Number</label>
+          <input type="text" id="phoneno" name="phoneno" [(ngModel)]="phoneno" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="type">type</label>
+          <input type="text" id="type" name="type" [(ngModel)]="type" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="text" id="price" name="price" [(ngModel)]="price" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" [(ngModel)]="location" required>
+        </div>
+        
+        <button type="submit" [disabled]="registerForm.invalid">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  <table *ngIf="users.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Farmer</th>
+        <th>Phone Number</th>
+        <th>Type</th>
+        <th>Price</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.farmer }}</td>
+        <td>{{ user.phoneno }}</td>
+        <td>{{ user.type }}</td>
+        <td>{{ user.price }}</td>
+        <td>{{ user.location }}</td>
+      </tr>
+    </tbody>
+  </table>
+ 

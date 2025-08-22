@@ -1,0 +1,185 @@
+<head>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0; /* Ensures the navbar starts at the leftmost edge */
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0px 14px 0px; /* Adjusted padding to remove left gap */
+    box-sizing: border-box;
+}
+
+.topnav .logo {
+    color: #f2f2f2;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 16px; /* If needed, add some padding just for the logo */
+}
+
+.topnav .menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.topnav .menu li {
+    margin-right: 20px;
+}
+
+.topnav .menu li a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 14px 16px;
+    display: block;
+}
+
+.topnav .menu li a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav .search-container {
+    display: flex;
+    align-items: center;
+}
+
+.topnav input[type="text"] {
+    padding: 8px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 3px;
+}
+
+.topnav .search-container button {
+    background-color: #4CAF50;
+    color: gray;
+    border: none;
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 3px;
+}
+
+.topnav .search-container button:hover {
+    background-color: #45a049;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: gray;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+#menuToggle {
+    display: none;
+}
+
+#menuToggle:checked ~ .sidenav {
+    width: 250px;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav .menu {
+        display: none;
+    }
+
+    .topnav .search-container {
+        margin-left: auto;
+    }
+
+    .topnav label {
+        float: right;
+    }
+}
+
+.openbtn {
+    font-size: 30px;
+    cursor: pointer;
+    color: #111;
+}
+
+.topnav label {
+    color: red;
+    margin-right: 50px;
+}
+
+    </style>
+  </head>
+  <body>
+  
+  <input type="checkbox" id="menuToggle">
+  <div class="topnav">
+    <a href="#" class="logo"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/2ba220123391455.60ed9903bbc23.jpg" alt="Logo" class="logo-image" style="height: 80px; width: 120px;"></a>
+    <ul class="menu">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/dump">About</a></li>
+        <li><a href="/settings">Rice-Mill</a></li>
+        <li><a href="/faq">FAQ'S</a></li>
+        <li><a href="/image-slider">Contact Us</a></li>
+        <li><a href="/details">Delear</a></li>
+        <li><a href="/farmer">Farm</a></li>
+        <li><a href="/about">User</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" placeholder="Search...">
+      <button type="submit" style="background-color: brown;">Search</button>
+    </div>
+    <label for="menuToggle" style="color: #f1f1f1; margin-right: 50px; font-size: 30px;">&#9776;</label>
+  </div>
+  
+  <div class="sidenav">
+    <label for="menuToggle" class="closebtn">&#9776;</label>
+    <a href="/home" mat-button >HOME</a>
+    <a href="/login" mat-button>LOGIN</a>
+    <a href="/use" mat-button>PROFILE</a>
+    <a href="/farmer" mat-button>FARM</a>
+    <a href="/contact" mat-button>DELEAR</a>
+    <a href="/login" mat-button>LogOut</a>
+  </div>
+  </body>
+  

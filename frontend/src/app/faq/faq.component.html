@@ -1,0 +1,12 @@
+<h1 style="margin-top: 150px; margin-left: 400px;">Most Frequently Asked Questions</h1>
+<div class="faq-container">
+    <div *ngFor="let faq of faqs" class="faq-item" style="width: 100%;">
+      <button (mouseover)="showAnswer(faq)" (mouseleave)="hideAnswer()" class="faq-button" style="background-color: cornflowerblue; width: 100%; font-size: 20px;">
+        {{ faq.question }}
+      </button>
+      <div class="answer" [ngClass]="{'visible': selectedFaq === faq}">
+        {{ faq.answer }}
+      </div>
+    </div>
+  </div>
+  
